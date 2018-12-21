@@ -22,8 +22,9 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/account' do
-    @user = Helpers.current_user(session)
+    puts params
     @is_logged_in = Helpers.is_logged_in?(session)
+    binding.pry
     if @is_logged_in != true
       redirect '/error'
     else
