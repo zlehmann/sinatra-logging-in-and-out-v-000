@@ -8,7 +8,7 @@ class Helpers
   def self.is_logged_in?(session)
     user = Helpers.current_user(session)
     result = nil
-    if session[:user_id] == user.id
+    if user != nil
       result = true
     else
       result = false
